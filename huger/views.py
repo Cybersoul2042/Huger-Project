@@ -12,7 +12,9 @@ from .models import User
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request, 'huger/home.html')
+        return render(request, 'huger/home.html', {
+            'user': request.user
+        })
     else:
         return HttpResponseRedirect(reverse("login"))
     
