@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgb(202, 58, 255);
+  left: 0;
+  top: 0;
+  -webkit-filter: blur(120px);
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgb(46, 209, 255);
+  right: 0;
+  bottom: 0;
+  -webkit-filter: blur(120px);
+}
+
+.login-container {
+  width: 20%;
+  height: 40%;
+  background-color: rgba(124, 124, 124, 0.042);
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.login-container .login-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login-container .login-box .login-box-dets {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=loginStyles.css.map */
