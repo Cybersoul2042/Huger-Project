@@ -6,6 +6,27 @@
         <title>Login</title>
     </head>
     <body>
-        
+        <div class="login-container">
+            <div class="login-box">
+                <div class="login-box-dets">
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input class="form-control" name="name" type="text" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="password" type="password" placeholder="Password">
+                        </div>
+                        <input class="btn" type="submit" value="Login">
+                    </form>
+                    {% if message %}
+                        <div>{{ message }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="register-ask">
+                <p>Don't have an account ??<a href="{% url 'register' %}">Register here.</a></p>
+            </div>
+        </div>
     </body>
 </html>

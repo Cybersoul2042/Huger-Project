@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-    </head>
-    <body>
-        Home
-    </body>
-</html>
+{% extends 'huger/layout.html' %}
+{% load static %}
+
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'huger/index.ts' %}"></script>
+{% endblock %}
+    
+
+{% block body %}
+    <h1>Home</h1>
+{% endblock %}
+    
+    

@@ -3,9 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
+        <title>
+            {% block title %}{% endblock  %}
+        </title>
+        {% block script %}{% endblock %}
     </head>
     <body>
-        
+        <div class="containers">
+            <div class="navbar-container">
+                <div class="navbar">
+                    <div class="navbar-groups">
+                        <div class="navbar-logo">
+    
+                        </div>
+                        <div class="navbar-pages">
+                            
+                        </div>
+                        <div class="navbar-user">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-container">
+                {% block body %}{% endblock %} 
+            </div>
+        </div>
     </body>
 </html>
