@@ -35,6 +35,7 @@ body{
 }
 
 .navbar-container{
+    padding-top: 10px;
     .navbar{
         .navbar-groups{
             display: flex;
@@ -50,9 +51,21 @@ body{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                gap: 100px;
+                gap: 30px;
                 align-items: center;
                 .navbar-page{
+                    transition: background-color 0.4s ease;
+                    width: auto;
+                    height: 40px;
+                    border-radius: 10px;
+                    padding: 10px;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
                     .page-locate{
                         font-size: 18px;
                     }
@@ -64,13 +77,37 @@ body{
                         }
                     }
                 }
-            }
-            .navbar-user{
-                .user-page{
-                    .user{
-                        font-size: 18px;
-                    }
+                .navbar-page:hover{
+                    transition: background-color 0.4s ease;
+                    cursor: pointer;
+                    background-color: rgba(72, 72, 72, 0.48);
+                    border-radius: 10px;
                 }
+            }
+            .navbar-plan{
+                transition: box-shadow 0.4s ease;
+                width: auto;
+                height: 40px;
+                padding: 10px;
+                padding-top: 0;
+                padding-bottom: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(29, 104, 255);
+                box-shadow: 0;
+                border: 0;
+                border-radius: 10px;
+                .new-plan{
+                   font-size: 20px;
+                   font-weight: bold;
+                }
+            }
+            .navbar-plan:hover{
+                transition: box-shadow 0.4s ease;
+                cursor: pointer;
+                box-shadow: 0 0 10px rgb(29, 104, 255);
             }
         }
     }
