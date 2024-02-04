@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+      "strictNullChecks": true,
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "es6",
+      "target": "es6",
+      "jsx": "react",
+      "allowJs": true,
+      "moduleResolution": "node"
+  },
+    
+  "include": ["D:/Web_Projects/Huger/hugersite/huger"]
+}
