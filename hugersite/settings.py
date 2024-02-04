@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#qmbm_bvj7q#o$7t+d!q^qd2s46+xh508vny85%h%vstcfg@es'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -83,10 +83,6 @@ DATABASES = {
 }
 
 # postgres://plan_plus_user:0pVwuZQyeJiCRqoshQjfmdDwLJlKAbRI@dpg-cmvp1c7qd2ns73cekk50-a.oregon-postgres.render.com/plan_plus
-
-DATABASES["default"] = dj_database_url.parse("postgres://plan_plus_user:0pVwuZQyeJiCRqoshQjfmdDwLJlKAbRI@dpg-cmvp1c7qd2ns73cekk50-a.oregon-postgres.render.com/plan_plus")
-
-
 
 AUTH_USER_MODEL = 'huger.User'
 # Password validation
