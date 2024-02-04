@@ -12,7 +12,7 @@
         <title>
             {% block title %}{% endblock  %}
         </title>
-        {% block script %}{% endblock %}
+        {% block script %}<script src="{% static 'huger/index.js' %}"></script>{% endblock %}
     </head>
     <body>
         <div class="containers">
@@ -23,17 +23,17 @@
                             <p class="site-name">PlanPlus</p>
                         </div>
                         <div class="navbar-pages">
-                            <div class="navbar-page">
+                            <div class="navbar-page" id="home-btn">
                                 <p class="page-locate">Home</p>
                             </div>
-                            <div class="navbar-page">
+                            <div class="navbar-page" id="plans-btn">
                                 <p class="page-locate">Your Plans</p>
                             </div>
-                            <div class="navbar-page">
+                            <div class="navbar-page" id="profile-btn">
                                 <p class="page-locate">{{user.username}}</p>
                             </div>
                            
-                            <div class="navbar-page">
+                            <div class="navbar-page" id="contact-btn">
                                 <p class="page-locate">Contact us</p>
                             </div>
                             <div class="navbar-page">
@@ -42,7 +42,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="navbar-plan">
+                        <div class="navbar-plan" id="newplan-btn">
                             <p class="new-plan">Make Plan</p>
                         </div>
                     </div>
