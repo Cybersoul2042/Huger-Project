@@ -12,45 +12,68 @@
         <title>
             {% block title %}{% endblock  %}
         </title>
-        {% block script %}<script src="{% static 'huger/index.js' %}"></script>{% endblock %}
     </head>
     <body>
-        <div class="containers">
-            <div class="navbar-container">
-                <div class="navbar">
-                    <div class="navbar-groups">
-                        <div class="navbar-logo">
-                            <p class="site-name">PlanPlus</p>
+        
+        <div class="navbar-container">
+            <div class="navbar">
+                <div class="navbar-groups">
+                    <div class="navbar-logo">
+                        <img src="{% static 'huger/logo.png' %}" alt="logo">
+                        <p class="site-name">PlanPlus</p>
+                    </div>
+                    <div class="navbar-pages">
+                        <div class="navbar-page" id="contact-btn">
+                            <p class="page-locate">ارتباط با ما</p>
                         </div>
-                        <div class="navbar-pages">
-                            <div class="navbar-page" id="home-btn">
-                                <p class="page-locate">Home</p>
+                        <div class="navbar-page" id="about-btn">
+                            <p class="page-locate">درباره ما</p>
+                        </div>
+                        <div class="navbar-page" id="home-btn" style="border-bottom: 1px solid #a594fd;">
+                            <a class="page-locate" href="{% url 'index' %}">صفحه اصلی</a>
+                        </div>
+                            
+                        {% if user.is_authenticated %}
+                            <div class="navbar-dropdown">
+                                <div class="dropdown">
+                                    <button class="drop-btn" id="username-options">{{user.username}}</button>
+                                    <div class="dropdown-content" id="account-opts" style="display: none;">
+                                        <div class="dropdown-style">
+                                            <div class="user-btn" id="profile-btn">
+                                                <a href="#">پنل کاربری</a>
+                                            </div>
+                                            <div class="user-btn" id="plan-btn">
+                                                <p>برنامه جدید</p>
+                                            </div>
+                                            <div class="user-btn" id="logout-btn">
+                                                <a href="{% url 'logout' %}">خارج شوید</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="navbar-page" id="plans-btn">
-                                <p class="page-locate">Your Plans</p>
-                            </div>
-                            <div class="navbar-page" id="profile-btn">
-                                <p class="page-locate">{{user.username}}</p>
-                            </div>
-                           
-                            <div class="navbar-page" id="contact-btn">
-                                <p class="page-locate">Contact us</p>
-                            </div>
-                            <div class="navbar-page">
-                                <p class="logout-page">
-                                    <a id="logout-link" href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                            <div class="navbar-page" id="login-btn">
+                                <p class="page-locate">
+                                    <a href="{% url 'login' %}">ورود/عضویت</a>
                                 </p>
-                            </div>
-                        </div>
-                        <div class="navbar-plan" id="newplan-btn">
-                            <p class="new-plan">Make Plan</p>
-                        </div>
+                            </div> 
+                        {% endif %}
+                        
                     </div>
                 </div>
             </div>
-            <div class="body-container">
-                {% block body %}{% endblock %} 
+        </div>
+        <div class="body-container">
+            {% block body %}{% endblock %} 
+        </div>
+        
+    
+        <div class="footer-navbar">
+            <div class="fnavbar-content">
+                <p>All Copyrights Received</p>
             </div>
         </div>
+        {% block script %}<script src="{% static 'huger/index.js' %}"></script>{% endblock %}
     </body>
 </html>

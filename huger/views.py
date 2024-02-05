@@ -11,12 +11,7 @@ from .models import User
 
 
 def index(request):
-    if request.user.is_authenticated:
-        return render(request, 'huger/home.html', {
-            'user': request.user
-        })
-    else:
-        return HttpResponseRedirect(reverse("login"))
+    return render(request, 'huger/home.html')
     
 def login_view(request):
     if request.method == "POST":
