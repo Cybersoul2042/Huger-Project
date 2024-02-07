@@ -13,51 +13,61 @@
             {% block title %}{% endblock  %}
         </title>
     </head>
+    
     <body>
-        
-        <div class="navbar-container">
-            <div class="navbar">
-                <div class="navbar-groups">
-                    <div class="navbar-logo">
-                        <img src="{% static 'huger/logo.png' %}" alt="logo">
-                        <p class="site-name">PlanPlus</p>
-                    </div>
-                    <div class="navbar-pages">
-                        <div class="navbar-page" id="contact-btn">
-                            <p class="page-locate">ارتباط با ما</p>
+        <div class="head">
+            <div class="navbar-container">
+                <div class="navbar">
+                    <div class="navbar-groups">
+                        <div class="navbar-logo">
+                            <img src="{% static 'huger/logo.png' %}" alt="logo">
+                            <p class="site-name">PlanPlus</p>
                         </div>
-                        <div class="navbar-page" id="about-btn">
-                            <p class="page-locate">درباره ما</p>
-                        </div>
-                        <div class="navbar-page" id="home-btn" style="border-bottom: 1px solid #a594fd;">
-                            <a class="page-locate" href="{% url 'index' %}">صفحه اصلی</a>
-                        </div>
-                            
-                        {% if user.is_authenticated %}
-                            <div class="navbar-dropdown">
-                                <div class="dropdown">
-                                    <button class="drop-btn" id="username-options">{{user.username}}</button>
-                                    <div class="dropdown-content" id="account-opts" style="display: none;">
-                                        <div class="dropdown-style">
-                                            <div class="user-btn" id="profile-btn">
-                                                <a href="#">پنل کاربری</a>
-                                            </div>
-                                            <div class="user-btn" id="plan-btn">
-                                                <p>برنامه جدید</p>
-                                            </div>
-                                            <div class="user-btn" id="logout-btn">
-                                                <a href="{% url 'logout' %}">خارج شوید</a>
+                        <div class="navbar-pages">
+                            <div class="navbar-page" id="contact-btn">
+                                <p class="page-locate">ارتباط با ما</p>
+                            </div>
+                            <div class="navbar-page" id="about-btn">
+                                <p class="page-locate">درباره ما</p>
+                            </div>
+                            <div class="navbar-page" id="home-btn">
+                                <a class="page-locate" href="{% url 'index' %}">صفحه اصلی</a>
+                            </div>
+                                
+                            {% if user.is_authenticated %}
+                                <div class="navbar-dropdown">
+                                    <div class="dropdown">
+                                        <button class="drop-btn" id="username-options">{{user.username}}</button>
+                                        <div class="dropdown-content" id="account-opts" style="display: none;">
+                                            <div class="dropdown-style">
+                                                <div class="user-btn" id="profile-btn">
+                                                    <a href="{% url 'profile' %}">پنل کاربری</a>
+                                                </div>
+                                                <div class="user-btn" id="plan-btn">
+                                                    <p>برنامه جدید</p>
+                                                </div>
+                                                <div class="user-btn" id="logout-btn">
+                                                    <a href="{% url 'logout' %}">خارج شوید</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% else %}
-                            <div class="navbar-page" id="login-btn">
-                                <a class="page-locate" href="{% url 'login' %}">ورود/عضویت</a>
-                            </div> 
-                        {% endif %}
-                        
+                            {% else %}
+                                <div class="navbar-page" id="login-btn">
+                                    <a class="page-locate" href="{% url 'login' %}">ورود/عضویت</a>
+                                </div> 
+                            {% endif %}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intro">
+                <div class="card" id="intro-card">
+                    <div class="card" id="about-card-dets">
+                        <h3>!!! <p style="display: inline;">PlanPlus</p> برنامه ای دقیق با</h3>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -65,12 +75,13 @@
         <div class="body-container">
             {% block body %}{% endblock %} 
         </div>
-        
-    
         <div class="footer-navbar">
-            <div class="fnavbar-content">
+            <div class="contact">
                 <p>All Copyrights Received</p>
             </div>
+        </div>
+        <div class="scroll-btn" style="display: none;">
+            <img src="{% static 'huger/upscroll.png' %}">
         </div>
         {% block script %}<script src="{% static 'huger/index.js' %}"></script>{% endblock %}
     </body>

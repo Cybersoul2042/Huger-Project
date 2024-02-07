@@ -12,6 +12,9 @@ from .models import User
 
 def index(request):
     return render(request, 'huger/home.html')
+
+def profile(request):
+    return render(request, "huger/profile.html")
     
 def login_view(request):
     if request.method == "POST":
