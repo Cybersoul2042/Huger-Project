@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
 @font-face {
   font-family: Yekan;
-  src: url(fonts/Yekan.ttf);
+  src: url("fonts/Yekan.52ce4de2efee.ttf");
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -41,7 +41,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   height: 100vh;
-  background-image: url(imgs/background.png);
+  background-image: url("imgs/background.35d0451db7f6.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -320,4 +320,4 @@ body {
   cursor: pointer;
 }
 
-/*# sourceMappingURL=layoutStyles.css.map */
+/*# sourceMappingURL=layoutStyles.css.f4c8a671e546.map */
