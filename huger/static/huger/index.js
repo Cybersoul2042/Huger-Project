@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (_b = document.querySelector('#about-btn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => ScrollToReach("about"));
     (_c = document.querySelector('#contact-btn')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', () => ScrollToReach("contact"));
     (_d = document.querySelector('.scroll-btn')) === null || _d === void 0 ? void 0 : _d.addEventListener('click', () => ScrollToReach("navbar-container"));
-    (_e = document.querySelector('.drop-btn')) === null || _e === void 0 ? void 0 : _e.addEventListener('click', () => Dropdown());
+    (_e = document.querySelector('.slider-btn')) === null || _e === void 0 ? void 0 : _e.addEventListener('click', () => SlideBar());
     window.onscroll = function () {
         let navbar = document.querySelector(".navbar-container");
         let scrollBtn = document.querySelector(".scroll-btn");
@@ -31,17 +31,18 @@ function ScrollToReach(pagetype) {
         });
     }
 }
-function Dropdown() {
-    let dropdown = document.getElementById("account-opts");
-    if (dropdown.style.display == 'none') {
-        dropdown.style.display = 'block';
+function SlideBar() {
+    let slider = document.getElementById("account-opts");
+    console.log("slider");
+    if (slider.style.transform == 'translate(100%, 0px)') {
+        slider.style.transform = 'translate(0px, 0px)';
     }
     else {
-        dropdown.style.display = 'none';
+        slider.style.transform = 'translate(100%, 0px)';
     }
     window.onclick = (event) => {
-        if (event.target == dropdown) {
-            dropdown.style.display = 'none';
+        if (event.target == slider) {
+            slider.style.display = 'none';
         }
     };
 }

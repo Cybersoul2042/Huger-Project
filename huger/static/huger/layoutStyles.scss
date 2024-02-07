@@ -138,7 +138,7 @@ body{
                         content: '';
                         border-bottom: solid 3px $purplecolor;  
                         transform: scaleX(0);  
-                        transition: transform 250ms ease-in-out;
+                        transition: transform 0.3s ease-in-out;
                     }
                     .page-locate:hover:after 
                     { 
@@ -154,7 +154,7 @@ body{
                 }
                 
             }
-            .navbar-dropdown{
+            .navbar-slider{
                 width: 15%;
                 height: 40px;
                 border-radius: 10px;
@@ -166,13 +166,9 @@ body{
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                .dropdown{
+                .slider{
                     position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content:space-between;
-                    align-items: center;
-                    .drop-btn{
+                    .slider-btn{
                         font-family: 'Quicksand',sans-serif;
                         font-weight: bold;
                         transition: color 0.6s ease;
@@ -186,55 +182,69 @@ body{
                         border-top-left-radius: 10px;
                         border-top-right-radius: 10px;
                     }
-                    .drop-btn:hover{
+                    .slider-btn:hover{
                         transition: color 0.4s ease;
                         color: $purplecolor;
                         cursor: pointer;
                     }
-                    .dropdown-content{
-                        position: absolute;
-                        top:100%;
-                        z-index: 1;
+                    .slider-content{
+                        transition: transform 1s ease;
+                        position: fixed;
+                        border-top-left-radius: 12px;
+                        border-bottom-left-radius: 12px;
+                        width: 15%;
+                        height: 80%;
+                        z-index: 10;
+                        right: 0;
+                        top: 10%;
                         background-color: rgb(48, 48, 48);
-                        min-width: 160px;
-                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                        border-radius: 10px;
+                        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.718);
                         color: white;
-                        .dropdown-style{
+                        .slider-style{
+                            height: 100%;
                             display: flex;
                             flex-direction: column;
-                            justify-content: space-evenly;
-                            
-                            .user-btn{
-                                height: auto;
-                                display: block;
-                            }
-                            #profile-btn{
-                                border-top-left-radius: 10px;
-                                border-top-right-radius: 10px;
-                                padding: 12px 16px;
-                                a{
-                                    color: white;
-                                    font-size: 16px;
-                                    text-decoration: none;
+                            justify-content: space-between;
+                            align-content: center;
+                            .other-btn{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                .user-btn{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-bottom: 1px solid white;
+                                    height: 40px;
+                                }
+                                #profile-btn{
+                                    border-top-left-radius: 12px;
+                                    padding: 12px 16px;
+                                    a{
+                                        color: white;
+                                        font-size: 16px;
+                                        text-decoration: none;
+                                    }
+                                }
+                                #profile-btn:hover{
+                                    background-color: rgb(69, 69, 69);
+                                    cursor: pointer;
+                                }
+                                #plan-btn{
+                                    padding: 12px 16px;
+                                    a{
+                                        color: white;
+                                        font-size: 16px;
+                                        text-decoration: none;
+                                    }
+                                }
+                                #plan-btn:hover{
+                                    background-color: rgb(69, 69, 69);
+                                    cursor: pointer;
                                 }
                             }
-                            #profile-btn:hover{
-                                background-color: rgb(69, 69, 69);
-                                cursor: pointer;
-                            }
-                            #plan-btn{
-                                padding: 12px 16px;
-                                color: white;
-                                font-size: 16px;
-                            }
-                            #plan-btn:hover{
-                                background-color: rgb(69, 69, 69);
-                                cursor: pointer;
-                            }
                             #logout-btn{
-                                border-bottom-left-radius: 10px;
-                                border-bottom-right-radius: 10px;
+                                border-bottom-left-radius: 12px;
                                 background-color: rgb(255, 42, 42);
                                 padding: 12px 16px;
                                 a{
@@ -305,8 +315,8 @@ body{
 .scroll-btn{
     transition: box-shadow 0.4s ease;
     position: fixed;
-    right: 2vw;
-    top: 92vh;
+    right: 1%;
+    top: 92%;
     width: 50px;
     height: 50px;
     border-radius: 50%;

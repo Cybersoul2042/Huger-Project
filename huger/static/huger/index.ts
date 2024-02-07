@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#about-btn')?.addEventListener('click', () => ScrollToReach("about"));
     document.querySelector('#contact-btn')?.addEventListener('click', () => ScrollToReach("contact"));
     document.querySelector('.scroll-btn')?.addEventListener('click', () => ScrollToReach("navbar-container"));
-    document.querySelector('.drop-btn')?.addEventListener('click', () => Dropdown());
+    document.querySelector('.slider-btn')?.addEventListener('click', () => SlideBar());
     
 
     window.onscroll = function(){
@@ -40,23 +40,25 @@ function ScrollToReach(pagetype: string)
     }
 }
 
-function Dropdown()
+function SlideBar()
 {
-    let dropdown = document.getElementById("account-opts")
+    let slider = document.getElementById("account-opts")
 
-    if(dropdown!.style.display == 'none')
+    console.log("slider")
+
+    if(slider!.style.transform == 'translate(100%, 0px)')
     {
-        dropdown!.style.display = 'block';
+        slider!.style.transform = 'translate(0px, 0px)';
         
     }
     else
     {
-        dropdown!.style.display = 'none';
+        slider!.style.transform = 'translate(100%, 0px)';
     }
 
     window.onclick = (event) => {
-        if (event.target == dropdown) {
-            dropdown!.style.display = 'none';
+        if (event.target == slider) {
+            slider!.style.display = 'none';
          }
     }
     
