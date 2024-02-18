@@ -11,10 +11,12 @@ from .models import User
 
 
 def index(request):
-    return render(request, 'huger/home.html')
+    return render(request, 'huger/layout.html')
 
 def profile(request):
-    return render(request, "huger/profile.html")
+    if(request.method == "POST"):
+        pass
+    return render(request, "huger/profileBody.html")
     
 def login_view(request):
     if request.method == "POST":
@@ -26,7 +28,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("profile"))
         else:
             return render(request, "huger/login.html", {
                 "message": "Invalid email and/or password."
@@ -61,7 +63,7 @@ def register(request):
                 "message": "Email address already taken."
             })
         login(request, user)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("profile"))
     
     else:
         return render(request, "huger/register.html")

@@ -1,0 +1,41 @@
+{% extends "huger/profile.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="body-container">
+        <div class="contents">
+            <div class="main">
+                <div class="main-header">
+                    <button class="new-plan-btn">برنامه جدید</button>
+                    <p>!! خوش آمدی ، {{user.username}} سلام</p>
+                </div>
+                <div class="main-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="new-plan-modal">
+        <div class="modal-content">
+            <form method="POST">
+                <div class="form-dets">
+                    <div class="form-header">
+                        <span class="close-btn"><i class="fa-regular fa-circle-xmark" style="height: auto; width: 100%;"></i></span>
+                        <p id="form-header-name">برنامه جدید</p>
+                    </div>
+                    <div class="form-contents">
+                        <div class="form-input">
+                            <input type="text" name="plan-name" required>
+                        </div>
+                        <div class="form-btn">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock body %}
+    
+    

@@ -1,11 +1,40 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'huger/profile.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/4679afff72.js" crossorigin="anonymous"></script>
         <title>پنل کاربری</title>
     </head>
     <body>
-        پروفایل
+        <header class="navbar-container">
+            <div class="navbar">
+                <div class="navbar-contents">
+                    <div class="logo">
+                        <p class="site-name">PlanPlus</p>
+                    </div>
+                    <div class="navbar-options">
+                        <div class="nav-option">
+                            <p class="main-btn">صفحه اصلی</p>
+                        </div>
+                        <div class="nav-option">
+                            <p class="team-btn">اعضای تیم</p>
+                        </div>
+                        <div class="nav-option">
+                            <p>{{user.username}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block body %} 
+        {% endblock body %}
+        <script src="{% static 'huger/profile.js' %}"></script>
     </body>
 </html>
