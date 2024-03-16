@@ -9,82 +9,116 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <title>
-            {% block title %}{% endblock  %}
-        </title>
+        <title>PlanPlus</title>
     </head>
     
     <body>
-        <div class="head">
-            <div class="navbar-container">
-                <div class="navbar">
-                    <div class="navbar-groups">
-                        <div class="navbar-logo">
-                            <img src="{% static 'huger/imgs/logo.png' %}" alt="logo">
-                            <p class="site-name">PlanPlus</p>
-                        </div>
-                        <div class="navbar-pages">
-                            <div class="navbar-page" id="contact-btn">
+        <header class="navbar-container">
+            <div class="navbar">
+                <div class="navbar-logo">
+                    <a class="logo-content" href="{% url 'index' %}"> 
+                        <img src="{% static 'huger/imgs/logo.png' %}" alt="logo">
+                        <p class="site-name">PlanPlus</p>
+                    </a>
+                </div>
+                <nav class="main-pages">
+                    <ul class="contents">
+                        <li>
+                            <div class="page" id="contact-btn">
                                 <p class="page-locate">ارتباط با ما</p>
                             </div>
-                            <div class="navbar-page" id="about-btn">
+                        </li>
+                        <li>
+                            <div class="page" id="about-btn">
                                 <p class="page-locate">درباره ما</p>
                             </div>
-                            <div class="navbar-page" id="home-btn">
-                                <a class="page-locate" href="{% url 'index' %}">صفحه اصلی</a>
+                        </li>
+                        <li>
+                            <div class="page" id="pricing-btn">
+                                <p class="page-locate">قیمت ها</p>
                             </div>
-                                
-                            {% if user.is_authenticated %}
-                                <div class="navbar-slider">
-                                    <div class="slider">
-                                        <button class="slider-btn" id="username-options">{{user.username}}</button>
-                                        <div class="slider-content" id="account-opts" style="transform: translate(100%, 0px);">
-                                            <div class="slider-style">
-                                                <div class="other-btn">
-                                                    <div class="user-btn" id="profile-btn">
-                                                        <a href="{% url 'profile' %}">پنل کاربری</a>
-                                                    </div>
-                                                    <div class="user-btn" id="plan-btn">
-                                                        <p>برنامه جدید</p>
-                                                    </div>
-                                                </div>
-                                                <div id="logout-btn">
-                                                    <a href="{% url 'logout' %}">خارج شوید</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% else %}
-                                <div class="navbar-page" id="login-btn">
-                                    <a class="page-locate" href="{% url 'login' %}">ورود/عضویت</a>
-                                </div> 
-                            {% endif %}
-                            
+                        </li>
+                    </ul>
+                </nav>
+                <div class="login-page">
+                    <div class="login-btn">
+                        <a href="{% url 'login' %}">ورود/عضویت</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="body-container">
+            <div class="intro-section">
+                <div class="container">
+                    <div class="intro-dets">
+                        <div>! خوش آمدید <span>PlanPlus</span> به سایت </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="about-section">
+                <div class="about">
+                    <div class="about-dets" id="about-card">
+                        <div class="about-text"> 
+                            ما یک گروه سه نفره هستیم که با هدف بهبود کیفیت زندگی و افزایش کارایی روزانه مردم این وبسایت را تشکیل دادیم. این وبسایت راهی برای گروه ها فراهم می کند تا بتوانند با کمک انواع نمودار ها برنامه های خود را هماهنگ کنند و انجام بدهند. با استفاده از این وبسایت، مردم میتوانند به سادگی در گروه های ساخته شده برای روز های خود ساعت هایی را مشخص کنند و زمان خالی مشترک بین بقیه افراد گروه را پیدا کنند. این سایت به ما کمک می‌کند تا با هم بهتر برنامه‌ریزی کنیم و زمان خالی روزانه خود را به طور موثر استفاده کنیم. ما با این سایت می‌خواهیم تجربیات مثبت و مفیدی را برای همه اشتراک بگذاریم و با هم در ساختن زندگی بهتر برای آینده کمک کنیم.
+                        </div>
+                        <div class="about-sign">
+                            <p>همین حالا ثبت نام کنید :</p>
+                            <a href="{% url 'register' %}">ثبت نام</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="particles-js"></div>
+            </div>
+            <div class="pricing-section">
+                <div class="pricing">
+                    <div class="billing-card" id="left">
+                        <div class="card-dets">
+                            <p>ماهانه</p>
+                            <button class="bill-btn">انتخاب</button>
+                        </div>
+                    </div>
+                    <div class="billing-card" id="middle">
+                        <div class="card-dets">
+                           <p>رایگان</p>
+                           <button class="bill-btn">انتخاب</button>
+                        </div>
+                    </div>
+                    <div class="billing-card" id="right">
+                        <div class="card-dets">
+                            <p>سالانه</p>
+                            <button class="bill-btn">انتخاب</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="intro">
-                <div class="card" id="intro-card">
-                    <div class="card" id="about-card-dets">
-                        <h3>!!! <p style="display: inline;">PlanPlus</p> برنامه ای دقیق با</h3>
-                        <p></p>
+            
+            <div class="footer-navbar">
+                <div class="contact">
+                    <div class="contact-dets">
+                        <div class="contact-ways" id="email">
+                            <i class="fa-regular fa-envelope"></i>
+                            <p>planplus2024@gmail.com</p>
+                        </div>
+                        <div class="contact-ways" id="telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                            <p>@amirrezagohari.08</p>
+                        </div>
+                        <div class="contact-ways" id="number">
+                            <i class="fa-solid fa-phone"></i>
+                            <p>+989101838779</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="body-container">
-            {% block body %}{% endblock %} 
-        </div>
-        <div class="footer-navbar">
-            <div class="contact">
-                <p>All Copyrights Received</p>
+                <div class="right">تمامی حقوق سایت متعلق به گروه پلن پلاس است</div>
             </div>
         </div>
         <div class="scroll-btn" style="display: none;">
             <img src="{% static 'huger/imgs/upscroll.png' %}">
         </div>
-        {% block script %}<script src="{% static 'huger/index.js' %}"></script>{% endblock %}
+        <script src="{% static 'huger/index.js' %}"></script>
+        <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+        <script src="{% static 'huger/particle.js' %}"></script>
+        <script src="https://kit.fontawesome.com/4679afff72.js" crossorigin="anonymous"></script>
     </body>
 </html>

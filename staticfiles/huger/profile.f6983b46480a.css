@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+@font-face {
+  font-family: Yekan;
+  src: url("fonts/Yekan.52ce4de2efee.ttf");
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Yekan", "Quicksand", sans-serif;
+  color: white;
+  background-color: #121212;
+}
+
+.content {
+  position: relative;
+  height: 100%;
+}
+.content #particles-js {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-container {
+  position: relative;
+  width: 100%;
+  height: 8vh;
+  top: 0;
+  background-color: #9784f6;
+  z-index: 99;
+}
+.navbar-container .navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.navbar-container .navbar .navbar-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-container .navbar .navbar-contents .logo {
+  width: 20%;
+  text-align: left;
+}
+.navbar-container .navbar .navbar-contents .logo .site-name {
+  font-family: "Quicksand", sans-serif;
+  font-size: 26px;
+  text-decoration: none;
+  color: white;
+  margin: 0;
+}
+.navbar-container .navbar .navbar-contents .navbar-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.middle {
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-container {
+  position: relative;
+  color: white;
+  background: rgba(111, 111, 111, 0.216);
+  backdrop-filter: blur(7.9px);
+  --webkit-backdrop-filter: blur(7.9px);
+  padding: 20px;
+  border-radius: 12px;
+  width: 70%;
+  height: 90%;
+}
+.body-container .contents {
+  height: 100%;
+}
+.body-container .contents .main {
+  position: relative;
+  height: 100%;
+}
+.body-container .contents .main .main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.body-container .contents .main .main-header p {
+  font-size: 20px;
+}
+.body-container .contents .main .main-header .new-plan-btn {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  justify-content: center;
+  width: 10%;
+  height: 10%;
+  font-size: 20px;
+  background-color: #9784f6;
+  padding: 10px;
+  border: 0px;
+  border-radius: 40px;
+  color: white;
+  text-align: center;
+  box-shadow: 0;
+}
+.body-container .contents .main .main-header .new-plan-btn:hover {
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  background-color: #a595f5;
+  box-shadow: 0px 0px 12px #9784f6;
+}
+.body-container .contents .main .main-body .plan-page {
+  background-color: rgba(31, 31, 31, 0.649);
+  border-radius: 8px;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.body-container .contents .main .main-body .plan-page .plan-url {
+  font-family: "Quicksand", sans-serif;
+}
+.body-container .contents .main .main-body .plan-page .plan-name {
+  font-size: 18px;
+  font-family: "Quicksand", "Yekan", sans-serif;
+}
+.body-container .contents .main .main-body .plan-page p {
+  font-size: 15px;
+  font-family: "Yekan", sans-serif;
+}
+.body-container .contents .main .main-body .plan-page a {
+  color: white;
+  text-decoration: none;
+}
+.body-container .contents .main .pagination {
+  direction: ltr;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.body-container .contents .main .pagination .pagination-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.body-container .contents .main .pagination .active {
+  color: #9784f6;
+}
+.body-container .contents .main .pagination li {
+  list-style-type: none;
+}
+.body-container .contents .main .pagination a {
+  color: white;
+  text-decoration: none;
+  font-family: "Yekan";
+}
+.body-container .contents .main .pagination a:hover {
+  color: #9784f6;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: hsla(0, 0%, 16%, 0.199);
+  top: 0;
+  left: 0;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  cursor: not-allowed;
+}
+.modal .modal-content {
+  position: absolute;
+  color: black;
+  width: 650px;
+  height: auto;
+  min-height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px 0 rgba(40, 59, 80, 0.4);
+  cursor: default;
+}
+.modal .modal-content form {
+  width: 100%;
+}
+.modal .modal-content form .form-dets {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: start;
+  padding: 10px;
+}
+.modal .modal-content form .form-dets .form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+}
+.modal .modal-content form .form-dets .form-header p {
+  font-family: "Yekan";
+  font-size: 20px;
+  margin: 0;
+}
+.modal .modal-content form .form-dets .form-header .close-btn {
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content form .form-dets .form-header .close-btn:hover, .modal .modal-content form .form-dets .form-header .close-btn:focus {
+  cursor: pointer;
+}
+.modal .modal-content form .form-dets .form-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  gap: 50px;
+  width: 60%;
+}
+.modal .modal-content form .form-dets .form-contents .form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: space-between;
+  align-items: start;
+}
+.modal .modal-content form .form-dets .form-contents .form-input p {
+  font-size: 18px;
+  font-family: "Yekan";
+}
+.modal .modal-content form .form-dets .form-contents .form-input input {
+  transition: background-color ease 0.4s;
+  text-align: right;
+  font-family: "Yekan";
+  border: 1px solid #d7dbe7;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+}
+.modal .modal-content form .form-dets .form-contents .form-input input:focus {
+  transition: background-color ease 0.4s;
+  background-color: rgba(198, 198, 198, 0.219);
+}
+.modal .modal-content form .form-dets .form-contents .form-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+.modal .modal-content form .form-dets .form-contents .form-btn .submit-btn {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  justify-content: center;
+  width: 20%;
+  height: 40px;
+  font-size: 14px;
+  background-color: #9784f6;
+  border: 0px;
+  border-radius: 40px;
+  color: white;
+  text-align: center;
+  box-shadow: 0;
+}
+.modal .modal-content form .form-dets .form-contents .form-btn .submit-btn:hover {
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  background-color: #a595f5;
+  box-shadow: 0px 0px 12px #9784f6;
+}
+
+/*# sourceMappingURL=profile.css.c712bdc3c757.map */

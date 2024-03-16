@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     var _a, _b, _c, _d, _e;
-    (_a = document.querySelector('#plan-btn')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => ScrollToReach("plan"));
+    (_a = document.querySelector('#pricing-btn')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => ScrollToReach("pricing"));
     (_b = document.querySelector('#about-btn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => ScrollToReach("about"));
     (_c = document.querySelector('#contact-btn')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', () => ScrollToReach("contact"));
     (_d = document.querySelector('.scroll-btn')) === null || _d === void 0 ? void 0 : _d.addEventListener('click', () => ScrollToReach("navbar-container"));
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 function ScrollToReach(pagetype) {
+    console.log("click");
     let page = document.querySelector(`.${pagetype}`);
     if (pagetype === "home") {
         page === null || page === void 0 ? void 0 : page.scrollIntoView({
@@ -27,7 +28,7 @@ function ScrollToReach(pagetype) {
     else {
         page === null || page === void 0 ? void 0 : page.scrollIntoView({
             behavior: "smooth",
-            block: "center"
+            block: "start"
         });
     }
 }

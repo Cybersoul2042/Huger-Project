@@ -1,0 +1,77 @@
+{% extends "huger/profile.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="body-container">
+        <div class="contents">
+            <div class="main">
+                <div class="main-header">
+                    <p>سلام {{ user.username }} ، برنامه های شما :</p>
+                    <button class="new-plan-btn">برنامه جدید</button>
+                </div>
+                <div class="main-body">
+                    {% for plan in plans %}
+                        <div class="plan-page">
+                            <a class="plan-name" href="{% url 'planPage' plan.url %}">{{plan.name}}</a>
+                            <p> لینک : <a class="plan-url" href="{% url 'planPage' plan.url %}">{{plan.url}}</a></p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="pagination">
+                    {% if plans.has_other_pages %}
+                        <ul class="pagination-list">
+                        {% if plans.has_previous %}
+                            <li><a href="?page={{ plans.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><span>&laquo;</span></li>
+                        {% endif %}
+                        {% for i in plans.paginator.page_range %}
+                            {% if plans.number == i %}
+                                <li class="active">
+                                    <span>{{ i }}</span>
+                                </li>
+                            {% else %}
+                                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if plans.has_next %}
+                            <li><a href="?page={{ plans.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="new-plan-modal">
+        <div class="modal-content">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-dets">
+                    <div class="form-header">
+                        <p id="form-header-name">برنامه جدید</p>
+                        <span class="close-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="height: 20px; width: 20px; display: flex; justify-content: center;" viewBox="0 0 384 512">
+                                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="form-contents">
+                        <div class="form-input">
+                            <p>نام برنامه :</p>
+                            <input type="text" name="plan-name" required>
+                        </div>
+                        <div class="form-btn">
+                            <input class="submit-btn" type="submit" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock body %}
+    
+    

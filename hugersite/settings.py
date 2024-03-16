@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#qmbm_bvj7q#o$7t+d!q^qd2s46+xh508vny85%h%vstcfg@es'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['plan-plus.onrender.com', '127.0.0.1']
 
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'hugersite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'huger_db',
+        'USER': 'root',
+        'PASSWORD': 'Amir@dmin1234321',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 

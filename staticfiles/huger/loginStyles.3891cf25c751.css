@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+@font-face {
+  font-family: Yekan;
+  src: url("fonts/Yekan.52ce4de2efee.ttf");
+}
+body {
+  margin: 0;
+  background-color: #f7f7f9;
+  color: white;
+  font-family: "Yekan", sans-serif;
+  height: 100%;
+  background-image: url("imgs/loginBackground.ea425d32d305.png");
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-container {
+  width: 550px;
+  height: 400px;
+  background: rgba(23, 23, 23, 0.216);
+  backdrop-filter: blur(7.9px);
+  --webkit-backdrop-filter: blur(7.9px);
+  border: 3px solid transparent;
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px rgb(44, 44, 44);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.login-container .login-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login-container .login-box .login-box-dets {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.login-container .login-box .login-box-dets .error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.login-container .login-box .login-box-dets form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.login-container .login-box .login-box-dets form .form-dets {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+}
+.login-container .login-box .login-box-dets form .form-dets #username-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.login-container .login-box .login-box-dets form .form-dets #username-input input {
+  border: 1px solid #d7dbe7;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+.login-container .login-box .login-box-dets form .form-dets #username-input input:focus {
+  border: 2px solid #9784f6;
+  border-radius: 4px;
+}
+.login-container .login-box .login-box-dets form .form-dets #username-input input:-webkit-autofill {
+  background-color: transparent;
+}
+.login-container .login-box .login-box-dets form .form-dets #password-input {
+  display: -ms-flexbox;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.login-container .login-box .login-box-dets form .form-dets #password-input .icon {
+  padding: 10px;
+  background: transparent;
+  min-width: 30px;
+  text-align: center;
+  border-radius: 4px;
+}
+.login-container .login-box .login-box-dets form .form-dets #password-input .icon:hover {
+  cursor: pointer;
+}
+.login-container .login-box .login-box-dets form .form-dets #password-input .form-control {
+  border: 1px solid #d7dbe7;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+.login-container .login-box .login-box-dets form .form-dets #password-input .form-control:focus {
+  border: 2px solid #9784f6;
+  border-radius: 4px;
+}
+.login-container .login-box .login-box-dets form .submit .submit-btn {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+  justify-content: center;
+  width: 15%;
+  height: 40px;
+  font-size: 16px;
+  font-family: "Yekan";
+  background-color: #9784f6;
+  border: 0px;
+  border-radius: 40px;
+  color: white;
+  text-align: center;
+  box-shadow: 0;
+}
+.login-container .login-box .login-box-dets form .submit .submit-btn:hover {
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+  background-color: white;
+  box-shadow: 0px 0px 12px #9784f6;
+  color: #9784f6;
+}
+.login-container .login-box .register-ask p {
+  font-family: "Yekan";
+}
+.login-container .login-box .register-ask p a {
+  transition: color 0.4s ease;
+  font-family: "Yekan";
+  color: white;
+  text-decoration: none;
+}
+.login-container .login-box .register-ask p a:hover {
+  transition: color 0.4s ease;
+  color: #9784f6;
+}
+
+/*# sourceMappingURL=loginStyles.css.a9fe23207eee.map */

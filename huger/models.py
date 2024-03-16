@@ -8,3 +8,11 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+class Plan(models.Model):
+    name = models.CharField(max_length=64)
+    memebers = models.ManyToManyField(User)
+    url = models.TextField(default=None)
+
+    def __str__(self):
+        return self.name

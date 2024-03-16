@@ -1,5 +1,5 @@
-$purplecolor: #a594fd;
-$blackback: rgb(40, 40, 40);
+$purplecolor: #9784f6;
+$blackback: #121212;
 $textColors: rgb(238, 238, 238);
 $button-hover-colors: #a594fd;
 $backgroundMain: #0c0c0c;
@@ -31,291 +31,372 @@ $toggleButton: #1b1b1b;
 
 body{
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 200px;
+    min-height: 100vh;
     font-family: 'Yekan', 'Quicksand', sans-serif;
     color:white;
     background: $blackback;
-}
-
-.head{
-    display: flex;
-    flex-direction: column;
-    
-    flex-wrap: wrap;
-    padding: 70px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 100vh;
-    background-image: url(imgs/background.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    .intro{
-        padding: 20px;
-        padding-top: 0;
-        height: auto;
-        #intro-card{
-            color: white;
-            width: 100%;
-            height: 100%;
-            position: relative;
-            border: 1px solid transparent;
-            border-radius: 1.25rem;
-            font-size: 26px;
-            text-align: end;
-            h3{
-                color: white;
-            }
-        }
-    }   
     
 }
 
 .navbar-container{
+    position: relative;
+    z-index: 99;
+    height: 8vh;
     width: 100%;
-    height: auto;
+    background-color: $blackback;
+    text-align: center;
     .navbar{
-        .navbar-groups{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-left: 32px;
+        padding-right: 32px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+        align-items: center;
+        .navbar-logo{
+            width: 20%;
+            position: relative;
+            display: inline-flex;
             align-items: center;
-            .navbar-logo{
-                position: relative;
+            justify-content: center;
+            height: 100%;
+            .logo-content{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
-                gap: 5px;
+                text-decoration: none;
+                height: 100%;
+                width: 100%;
                 img{
                     height: 40px;
                 }
                 .site-name{
                     font-family: 'Quicksand', sans-serif;
                     font-size: 26px;
-                    background-size: 100%;
-                    background-image: linear-gradient(90deg, #ffffff, $purplecolor);
-                    background-repeat: repeat;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent; 
-                    -moz-background-clip: text;
-                    -moz-text-fill-color: transparent;
-                }
-            }
-            .navbar-pages{
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                gap: 30px;
-                align-items: center;
-                .navbar-page{
-                    position: relative;
                     color: white;
-                    width: auto;
-                    height: 40px;
-                    border-radius: 10px;
-                    padding: 10px;
-                    padding-top: 0;
-                    padding-bottom: 0;
-                    text-align: center;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    .page-locate{
-                        transition: color 0.6s ease;
-                        font-size: 18px;
-                        text-decoration: none;
-                        color: white;
-                    }
-                    .page-locate:hover{
-                        transition: color 0.6s ease;
-                        color: $purplecolor;
-                        cursor: pointer;
-                    }
-                    .page-locate:after {
-                        display:block;
-                        content: '';
-                        border-bottom: solid 3px $purplecolor;  
-                        transform: scaleX(0);  
-                        transition: transform 0.3s ease-in-out;
-                    }
-                    .page-locate:hover:after 
-                    { 
-                        transform: scaleX(1); 
-                    }
-                    .logout-page{
-                        font-size: 18px;
-                        #logout-link{
-                            color: white;
-                            text-decoration: none;
-                        }
-                    }
+                    margin: 0;
                 }
-                
             }
-            .navbar-slider{
-                width: 15%;
-                height: 40px;
-                border-radius: 10px;
-                padding: 10px;
-                padding-top: 0;
-                padding-bottom: 0;
-                text-align: center;
+            
+        }
+        .main-pages{
+            width: 60%;
+            .contents{
+                margin: 0;
+                padding: 0;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                .slider{
+                li{
+                    width: 10%;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
                     position: relative;
-                    .slider-btn{
-                        font-family: 'Quicksand',sans-serif;
-                        font-weight: bold;
-                        transition: color 0.6s ease;
-                        background-color: transparent;
-                        border-top-right-radius: 10px;
-                        border-top-left-radius: 10px;
-                        color: white;
-                        padding: 16px;
-                        font-size: 16px;
-                        border: none;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 10px;
-                    }
-                    .slider-btn:hover{
-                        transition: color 0.4s ease;
-                        color: $purplecolor;
-                        cursor: pointer;
-                    }
-                    .slider-content{
-                        transition: transform 1s ease;
-                        position: fixed;
-                        border-top-left-radius: 12px;
-                        border-bottom-left-radius: 12px;
-                        width: 15%;
-                        height: 80%;
-                        z-index: 10;
-                        right: 0;
-                        top: 10%;
-                        background-color: rgb(48, 48, 48);
-                        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.718);
-                        color: white;
-                        .slider-style{
-                            height: 100%;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            align-content: center;
-                            .other-btn{
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-                                .user-btn{
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    border-bottom: 1px solid white;
-                                    height: 40px;
-                                }
-                                #profile-btn{
-                                    border-top-left-radius: 12px;
-                                    padding: 12px 16px;
-                                    a{
-                                        color: white;
-                                        font-size: 16px;
-                                        text-decoration: none;
-                                    }
-                                }
-                                #profile-btn:hover{
-                                    background-color: rgb(69, 69, 69);
-                                    cursor: pointer;
-                                }
-                                #plan-btn{
-                                    padding: 12px 16px;
-                                    a{
-                                        color: white;
-                                        font-size: 16px;
-                                        text-decoration: none;
-                                    }
-                                }
-                                #plan-btn:hover{
-                                    background-color: rgb(69, 69, 69);
-                                    cursor: pointer;
-                                }
-                            }
-                            #logout-btn{
-                                border-bottom-left-radius: 12px;
-                                background-color: rgb(255, 42, 42);
-                                padding: 12px 16px;
-                                a{
-                                    color: white;
-                                    font-size: 16px;
-                                    text-decoration: none;
-                                }
-                            }
-                            #logout-btn:hover{
-                                background-color: rgb(255, 77, 77);
-                                cursor: pointer;
-                            }
+                    div{
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        .page-locate{
+                            transition: opacity 0.6s ease;
+                            font-size: 18px;
+                            text-decoration: none;
+                            color: white;
+                            opacity: 0.7;
                         }
-                        
+                        .page-locate:hover{
+                            transition: opacity 0.6s ease;
+                            opacity: 1;
+                            cursor: pointer;
+                        }
+                        .page-locate:after {
+                            display:block;
+                            content: '';
+                            border-bottom: solid 3px white;  
+                            transform: scaleX(0);  
+                            transition: transform 0.3s ease-in-out;
+                        }
+                        .page-locate:hover:after 
+                        { 
+                            transform: scaleX(1); 
+                        }
                     }
                 }
+            }
+        }
+        .login-page{
+            width: 20%;
+            display: inline-flex;
+            justify-content: center;
+            text-align: center;
+            .login-btn{
+                transition: box-shadow 0.4s ease;
+                width: 40%;
+                padding: 10px;
+                border-radius: 50px;
+                border: 2px solid white;
+                a{
+                    font-size: 16px;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+            .login-btn:hover{
+                transition: box-shadow 0.4s ease;
+                box-shadow: 0px 0px 12px #ffffffbe;
+                cursor: pointer;
             }
         }
     }
 }
 
 .body-container{
-    .pages{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        gap: 200px;
-        #plan-card{
-            width: 320px;
-            height: 350px;
-            position: relative;
-            border: 1px solid transparent;
-            border-radius: 1.25rem;
-            padding: 10px;
-            background-color: var(--backgroundSecondry, $backgroundSecondry);
-            h3{
-                font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    .intro-section{
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+        height: 92vh;
+        overflow: hidden;
+        color: white;
+        background-image: url(imgs/background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 99%);
+        
+        .container{
+            min-width: 20rem;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            .intro-dets{
+                min-width: 8.5rem;
+                font-family: 'Yekan', sans-serif;
+                font-weight: normal;
+                font-size: 30px;
+                span{
+                    font-family: 'Quicksand', sans-serif;
+                }
             }
-            text-align: center;
-            
         }
         
-        #about-card{
-            height: 500px;
+    }
+
+    .pricing-section{
+        position: relative;
+        height: 100vh;
+        background: radial-gradient(
+            rgb(255, 255, 255, 0.2) 8%, 
+            transparent 8%
+        );
+        background-position: 0% 0%;
+        background-size: 4.5vmin 4.5vmin;
+        .pricing{
             position: relative;
-            border: 1px solid transparent;
-            border-radius: 1.25rem;
-            padding: 10px;
-            h3{
-                font-weight: bold;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            .billing-card{
+                position: absolute;
+                background-color: rgba(31, 31, 31, 0.624);
+                backdrop-filter: blur(5px);
+                --webkit-backdrop-filter: blur(5px);
+                box-shadow: 0px 0px 12px rgb(28, 28, 28);
+                width: 300px;
+                height: 400px;
+                aspect-ratio: 5 / 7;
+                border-radius: 12px;
+                .card-dets{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    p{
+                        margin: 0;
+                        margin-top: 20px;
+                    }
+                    .bill-btn{
+                        transition: background-color ease 0.6s, box-shadow ease 0.6s, color ease 0.6s;
+                        background-color: transparent;
+                        border: 2px solid $purplecolor;
+                        color: $purplecolor;
+                        border-radius: 18px;
+                        font-size: 20px;
+                        
+                        font-family: 'Yekan', sans-serif;
+                        width: 30%;
+                        height: 35px;
+                        margin-bottom: 20px;
+                    }
+                    .bill-btn:hover{
+                        color: white;
+                        background-color: $purplecolor;
+                        box-shadow: 0px 0px 12px $purplecolor;
+                        cursor: pointer;
+                    }
+
+                }
             }
-            text-align: end;
+            #left{
+                transition: width ease 0.4s, height ease 0.4s;
+                transform: translateX(-60%) rotate(-3deg);
+            }
+            #left:hover{
+                
+                z-index: 3;
+                width: 350px;
+                height: 450px;
+            }
+            #middle{
+                transition: width ease 0.4s, height ease 0.4s;
+                
+                z-index: 2;
+                
+            }
+            #middle:hover{
+               
+                z-index: 3;
+                width: 350px;
+                height: 450px;
+            }
+            #right{
+                transition: width ease 0.4s, height ease 0.4s;
+                transform: translateX(60%) rotate(3deg);
+            }
+            #right:hover{
+                z-index: 3;
+                width: 350px;
+                height: 450px;
+            }
         }
     }
     
-}
+    .about-section{
+        position: relative;
+        max-width: 100%;
+        height: 100vh;
+        color: white;
+        font-family: 'Yekan', sans-serif;
+        #particles-js{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            
+        }
+        .about{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .about-dets{
+                position: absolute;
+                background-color: rgba(30, 30, 30, 0.193);
+                backdrop-filter: blur(5px);
+                --webkit-backdrop-filter: blur(5px);
+                border-radius: 12px;
+                margin-right: 20px;
+                position: absolute;
+                width: 80%;
+                height: 80%;
+                direction: rtl;
+                font-family: 'Yekan', sans-serif;
+                font-weight: normal;
+                font-size: 24px;
+                padding: 20px;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .about-text
+                {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                .about-sign{
+                    direction: rtl;
+                    font-size: 28px;
+                    color: white;
+                    margin-bottom: 20%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    p{
+                        margin: 0;
+                    }
+                    a{
+                        width: 8%;
+                        height: 35px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none;
+                        transition: box-shadow ease 0.4s;
+                        background-color: transparent;
+                        border: 2px solid white;
+                        color: white;
+                        border-radius: 18px;
+                        font-size: 20px;
+                        font-family: 'Yekan', sans-serif;
 
-.footer-navbar{
-    font-family: 'Quicksand', sans-serif;
-    background: radial-gradient(circle at 10% 20%,  rgb(44, 0, 58) 0.1%,#4c437d 99.8%);
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    border-radius: 40px 40px 0 0;
+                    }
+                    a:hover{
+                        box-shadow: 0px 0px 12px white;
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+    
+    .footer-navbar{
+        position: relative;
+        width: 100%;
+        height: 10vh;
+        bottom: 0px;
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        background: radial-gradient(circle at 10% 20%,  $purplecolor 1%,#5b4f9b 99.8%);
+        .contact{
+            .contact-dets{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                .contact-ways{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+                    align-items: center;
+                    i{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        .right{
+            font-family: 'Yekan', sans-serif;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+    }
 }
 
 .scroll-btn{
@@ -323,10 +404,9 @@ body{
     position: fixed;
     right: 1%;
     top: 92%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    
     img{
         width: 100%;
         height: 100%;

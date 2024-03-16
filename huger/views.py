@@ -6,15 +6,40 @@ from django.http import JsonResponse
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator
 
-from .models import User
+from .models import User, Plan
+
+import string, random
 
 
 def index(request):
-    return render(request, 'huger/home.html')
+    return render(request, 'huger/layout.html')
 
+@csrf_exempt
+@login_required
 def profile(request):
-    return render(request, "huger/profile.html")
+    if(request.method == "POST"):
+        plan_name = request.POST["plan-name"]
+        s = 14
+        ranUrl = "plan-" + "".join(random.choices(string.ascii_uppercase + string.digits, k = s))
+
+        plan = Plan(name=plan_name, url=ranUrl)
+        plan.save()
+
+        return HttpResponseRedirect(reverse("profile"))
+    
+    plans = Plan.objects.all()
+    paginator = Paginator(plans, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+        
+    return render(request, "huger/profileBody.html",{
+        "plans": page_obj
+    })
+
+def plan_page(request, ppURL):
+    return render(request, "huger/planPage.html")
     
 def login_view(request):
     if request.method == "POST":
@@ -26,7 +51,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("profile"))
         else:
             return render(request, "huger/login.html", {
                 "message": "Invalid email and/or password."
@@ -61,7 +86,7 @@ def register(request):
                 "message": "Email address already taken."
             })
         login(request, user)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("profile"))
     
     else:
         return render(request, "huger/register.html")

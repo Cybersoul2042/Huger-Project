@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector('#plan-btn')?.addEventListener('click', () => ScrollToReach("plan"));
+    document.querySelector('#pricing-btn')?.addEventListener('click', () => ScrollToReach("pricing"));
     document.querySelector('#about-btn')?.addEventListener('click', () => ScrollToReach("about"));
     document.querySelector('#contact-btn')?.addEventListener('click', () => ScrollToReach("contact"));
     document.querySelector('.scroll-btn')?.addEventListener('click', () => ScrollToReach("navbar-container"));
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function ScrollToReach(pagetype: string)
 {
+    console.log("click")
     let page = document.querySelector(`.${pagetype}`)
     if(pagetype === "home")
     {
@@ -35,7 +36,7 @@ function ScrollToReach(pagetype: string)
     {
         page?.scrollIntoView({
             behavior: "smooth",
-            block: "center"
+            block: "start"
         });
     }
 }
