@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
 @font-face {
   font-family: Yekan;
-  src: url(fonts/Yekan.ttf);
+  src: url(fonts/BYekan+.ttf);
+  font-display: fallback;
+}
+@font-face {
+  font-family: QuickSand;
+  src: url(fonts/Quicksand-Medium.ttf);
+  font-display: fallback;
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -133,9 +138,8 @@ body {
   padding: 10px;
   border-radius: 50px;
   border: 2px solid white;
-}
-.navbar-container .navbar .login-page .login-btn a {
-  font-size: 16px;
+  font-size: 18px;
+  font-family: "Yekan", sans-serif;
   text-decoration: none;
   color: white;
 }

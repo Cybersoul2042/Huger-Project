@@ -1,11 +1,11 @@
 @font-face {
   font-family: Yekan;
-  src: url(fonts/BYekan+.ttf);
+  src: url("fonts/BYekan+.080f937ceb58.ttf");
   font-display: fallback;
 }
 @font-face {
   font-family: QuickSand;
-  src: url(fonts/Quicksand-Medium.ttf);
+  src: url("fonts/Quicksand-Medium.fd7f304a26dd.ttf");
   font-display: fallback;
 }
 ::-webkit-scrollbar {
@@ -160,7 +160,7 @@ body {
   height: 92vh;
   overflow: hidden;
   color: white;
-  background-image: url(imgs/background.png);
+  background-image: url("imgs/background.35d0451db7f6.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px;
@@ -393,4 +393,4 @@ body {
   cursor: pointer;
 }
 
-/*# sourceMappingURL=layoutStyles.css.map */
+/*# sourceMappingURL=layoutStyles.css.c09d8df8a922.map */

@@ -6,11 +6,15 @@ $backgroundMain: #0c0c0c;
 $backgroundSecondry: rgb(28, 28, 28);
 $toggleButton: #1b1b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
-
 @font-face {
     font-family: Yekan;
-    src: url(fonts/Yekan.ttf);
+    src: url(fonts/BYekan+.ttf);
+    font-display: fallback;
+}
+@font-face {
+    font-family: QuickSand;
+    src: url(fonts/Quicksand-Medium.ttf);
+    font-display: fallback;
 }
 
 ::-webkit-scrollbar{
@@ -140,11 +144,10 @@ body{
                 padding: 10px;
                 border-radius: 50px;
                 border: 2px solid white;
-                a{
-                    font-size: 16px;
-                    text-decoration: none;
-                    color: white;
-                }
+                font-size: 18px;
+                font-family: 'Yekan', sans-serif;
+                text-decoration: none;
+                color: white;
             }
             .login-btn:hover{
                 transition: box-shadow 0.4s ease;

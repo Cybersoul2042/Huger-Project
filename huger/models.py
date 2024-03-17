@@ -10,8 +10,8 @@ class User(AbstractUser):
         return self.username
 
 class Plan(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=64)
-    memebers = models.ManyToManyField(User)
     url = models.TextField(default=None)
 
     def __str__(self):

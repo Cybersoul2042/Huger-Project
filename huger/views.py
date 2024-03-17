@@ -23,13 +23,14 @@ def profile(request):
         plan_name = request.POST["plan-name"]
         s = 14
         ranUrl = "plan-" + "".join(random.choices(string.ascii_uppercase + string.digits, k = s))
+        maker = request.user
 
-        plan = Plan(name=plan_name, url=ranUrl)
+        plan = Plan(owner = maker, name=plan_name, url=ranUrl)
         plan.save()
 
         return HttpResponseRedirect(reverse("profile"))
     
-    plans = Plan.objects.all()
+    plans = Plan.objects.filter(owner = request.user)
     paginator = Paginator(plans, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

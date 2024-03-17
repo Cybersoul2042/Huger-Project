@@ -39,4 +39,4 @@ function isInViewport(element, partiallyVisible = false) {
             ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
         : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 }
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.js.af9ed6b27f54.map
