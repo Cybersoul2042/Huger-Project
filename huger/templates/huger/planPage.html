@@ -1,11 +1,46 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'huger/planStyles.css' %}">
         <title>Plan Page</title>
     </head>
     <body>
-        Plan
+        <div class="container">
+            <div class="header">
+                <div class="navbar-container">
+                   <nav class="navbar">
+                        <div class="navbar-logo">
+                            <a class="logo-content" href="{% url 'index' %}"> 
+                                <img src="{% static 'huger/imgs/logo.png' %}" alt="logo">
+                                <p class="site-name">PlanPlus</p>
+                            </a>
+                        </div>
+                        <div class="navbar-options">
+                            <div class="nav-option" id="utilities">
+                                <p>امکانات دیگر</p>
+                            </div>
+                            <div class="nav-option" id="contact">
+                                <p>ارتباط با اعضا</p>
+                            </div>
+                            <div class="nav-option" id="chart">
+                                <p>نمودار ها</p>
+                            </div>
+                        </div>
+                        <div class="name-container">
+                            <p>{{ plan.name }}</p>
+                        </div>
+                   </nav>
+                </div>
+            </div>
+            <div class="middle">
+                {% block body %}
+                    
+                {% endblock %}   
+            </div>
+        </div>
     </body>
 </html>

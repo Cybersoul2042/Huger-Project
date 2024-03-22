@@ -31,7 +31,7 @@ def profile(request):
         return HttpResponseRedirect(reverse("profile"))
     
     plans = Plan.objects.filter(owner = request.user)
-    paginator = Paginator(plans, 6)
+    paginator = Paginator(plans, 7)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
         
@@ -40,7 +40,10 @@ def profile(request):
     })
 
 def plan_page(request, ppURL):
-    return render(request, "huger/planPage.html")
+    plan = Plan.objects.get(url = ppURL)
+    return render(request, "huger/planPage.html",{
+        "plan": plan
+    })
     
 def login_view(request):
     if request.method == "POST":

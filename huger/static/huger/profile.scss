@@ -5,7 +5,7 @@ $blackback: #1c1c1c;
 
 @font-face {
     font-family: Yekan;
-    src: url(fonts/Yekan.ttf);
+    src: url(fonts/BYekan+.ttf);
 }
 
 body{
@@ -18,6 +18,9 @@ body{
 
 .content{
     position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 100%;
     #particles-js{
         position: fixed;
@@ -25,160 +28,289 @@ body{
         width: 100%;
         height: 100%;
     }
+    .copy-text{
+        position: fixed;
+        top: 10%;
+        left: 0;
+        width: 100px;
+        background: linear-gradient(to bottom right, #6F54F3 20%, $navColor 70%);
+        border-radius: 12px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        transition: all 0.6s ease-in-out;
+    }
 }
 
 .navbar-container{
     position: relative;
-    width: 100%;
-    height: 8vh;
+    width: 10vw;
+    height: 100vh;
     top: 0;
-    background-color: $navColor;
+    background-color: rgb(41, 41, 41);
     z-index: 99;
     .navbar{
-        height: 70px;
+        position: relative;
+        height: 100%;
         display: flex;
         align-items: center;
-        padding-left: 15%;
-        padding-right: 15%;
+        
         .navbar-contents{
-            width: 100%;
+            position: absolute;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            .logo{
-                width: 20%;
-                text-align: left;
-                .site-name{
-                    font-family: 'Quicksand', sans-serif;
-                    font-size: 26px;
-                    text-decoration: none;
-                    color: white;
-                    margin: 0;
-                }
-            }
+            width: 100%;
+            height: 100%;
             .navbar-options{
+                top: 0;
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                flex-direction:column;
                 gap: 10px;
                 align-items: center;
+                width: 100%;
+                .nav-option{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: left;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 16px;
+                    svg{
+                        path{
+                            fill: white;
+                        }
+                    }
+                    
+                }
+                .plan-btn{
+                    margin-top: 30px;
+                    .new-plan-btn{
+                        align-content: center;
+                        transition: background-color 0.4s ease, box-shadow 0.4s ease;
+                        font-size: 18px;
+                        font-family: 'Yekan', sans-serif;
+                        background-color: $navColor;
+                        padding: 10px;
+                        border: 0px;
+                        border-radius: 12px;
+                        color: white;
+                        box-shadow: 0;
+                    }
+                    .new-plan-btn:hover{
+                        cursor: pointer;
+                        transition: background-color 0.4s ease, box-shadow 0.4s ease;
+                        background-color: #a595f5;
+                        box-shadow: 0px 0px 12px $navColor;
+                    }
+                }
             }
+            .account-options{
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border-top: 2px solid rgb(24, 24, 24);
+                width: 100%;
+                .account-name{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+                    svg{
+                        path{
+                            fill: white;
+                        }
+                    }
+                }
+                .account-name:hover{
+                    cursor: pointer;
+                }
+                
+                .account-modal{
+                    transition: all 300ms ease-in-out;
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateY(-40%);
+                    width: 80%;
+                    height: 150px;
+                    background-color: rgb(23, 23, 23);
+                    border-radius: 12px;
+                    .modal-content{
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .logout-btn{
+                            height: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            a{
+                                color: rgb(255, 52, 52);
+                                text-decoration: none;
+                                font-size: 18px;
+                                font-family: 'Yekan', sans-serif;
+                                transition: color 0.4s ease;
+                            }
+                            a:hover{
+                                color: rgb(255, 115, 115);
+                            }
+                        }
+                        .settings{
+                            height: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            p{
+                                font-size: 18px;
+                                font-family: 'Yekan', sans-serif;
+                            }
+                        }
+                    }
+                }
+            }
+            
         }
     }
     
 }
 
 .middle{
-    height: 92vh;
+    height: 100vh;
+    width: 90vw;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.body-container{
-    position: relative;
-    color: white;
-    background: rgba(111, 111, 111, 0.216);
-    backdrop-filter: blur(7.9px);
-    --webkit-backdrop-filter: blur(7.9px);
-    padding: 20px;
-    border-radius: 12px;
-    width: 70%;
-    height: 90%;
-    .contents{
-        height: 100%;
-        .main{
-            position: relative;
-            height: 100%;
-            .main-header{
+    .body-container{
+        color: white;
+        background: rgba(111, 111, 111, 0.216);
+        backdrop-filter: blur(7.9px);
+        --webkit-backdrop-filter: blur(7.9px);
+        border-radius: 12px;
+        width: 70%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+
+        .search-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.347);
+            margin-top: 2%;
+            height: 5%;
+            padding-left: 10px;
+            padding-right: 10px;
+            .search-bar{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
                 align-items: center;
-                margin-bottom: 10px;
-                p{
-                    font-size: 20px;
+                gap: 5px;
+                svg{
+                    transform: rotate(90deg);
+                    path{
+                        fill: white;
+                        opacity: 30%;
+                    }
                 }
-                .new-plan-btn{
-                    transition: background-color 0.4s ease, box-shadow 0.4s ease;
-                    justify-content: center;
-                    width: 10%;
-                    height: 10%;
-                    font-size: 20px;
-                    background-color: $navColor;
-                    padding: 10px;
-                    border: 0px;
-                    border-radius: 40px;
+                .form-control{
+                    background-color: transparent;
+                    border:0px;
                     color: white;
-                    text-align: center;
-                    box-shadow: 0;
+                    padding-right: 8px;
+                    font-size: 18px;
+                    font-family: 'Yekan', sans-serif;
+                    outline: none;
                 }
-                .new-plan-btn:hover{
-                    cursor: pointer;
-                    transition: background-color 0.4s ease, box-shadow 0.4s ease;
-                    background-color: #a595f5;
-                    box-shadow: 0px 0px 12px $navColor;
+                input:focus{
+                    border: 0px;
+                    outline: none;
                 }
             }
+        }
 
-            .main-body{
-                .plan-page{
-                    background-color: rgba(31, 31, 31, 0.649);
-                    border-radius: 8px;
-                    padding: 6px;
-                    padding-left: 12px;
-                    padding-right: 12px;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
+        .contents{
+            height: 90%;
+            .main{
+                position: relative;
+                height: 100%;
+                .main-body{
+                    padding: 10px;
+                    .plan-page{
+                        background-color: rgba(31, 31, 31, 0.649);
+                        border-radius: 6px;
+                        padding: 6px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        .url{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            .plan-url{
+                                font-family: 'Quicksand', sans-serif;
+                            }
+                            .plan-url:hover{
+                                cursor: pointer;
+                            }
+                            svg{
+                                path{
+                                    fill: white;
+                                }
+                            }
+                        }
+                        .plan-name{
+                            color: white;
+                            text-decoration: none;
+                            font-size: 18px;
+                            font-family: 'Quicksand', 'Yekan', sans-serif;
+                        }
+                    }
+                }
+    
+                .pagination{
+                    direction: ltr;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
                     margin-bottom: 10px;
-                    .plan-url{
-                        font-family: 'Quicksand', sans-serif;
+                    .pagination-list{
+                        display: flex;
+                        flex-direction: row;
+                        gap: 20px;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0;
                     }
-                    .plan-name{
-                        font-size: 18px;
-                        font-family: 'Quicksand', 'Yekan', sans-serif;
-                    }
-                    p{
-                        font-size: 15px;
-                        font-family: 'Yekan', sans-serif;
+                    .active{
+                        color: $navColor;
+                        
+                    }  
+                    li{
+                        list-style-type: none;
                     }
                     a{
                         color: white;
                         text-decoration: none;
+                        font-family: 'Yekan', sans-serif;
                     }
-                }
-            }
-
-            .pagination{
-                direction: ltr;
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                .pagination-list{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 20px;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 0;
-                }
-                .active{
-                    color: $navColor;
-                    
-                }  
-                li{
-                    list-style-type: none;
-                }
-                a{
-                    color: white;
-                    text-decoration: none;
-                    font-family: 'Yekan';
-                }
-                a:hover{
-                    color: $navColor;
-                    
+                    a:hover{
+                        color: $navColor;
+                        
+                    }
                 }
             }
         }
@@ -191,7 +323,7 @@ body{
     width: 100%;
     height: 100%;
     z-index: 99;
-    background: hsla(0, 0%, 16%, 0.199);
+    background: hsla(0, 0%, 11%, 0.601);
     top: 0;
     left: 0;
     margin: 0;
@@ -202,43 +334,45 @@ body{
     .modal-content{
         position: absolute;
         color: black;
-        width: 650px;
-        height: auto;
-        min-height: 50px;
+        width: 25%;
+        height: 45%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: #fff;
+        background: radial-gradient(
+            rgb(255, 255, 255, 0.2) 8%, 
+            transparent 8%
+        );
+        background-position: 0% 0%;
+        background-size: 1% 1%;
         border-radius: 8px;
-        box-shadow: 0 8px 20px 0 rgba(40,59,80,.4);
+        box-shadow: 0 0px 20px 0 rgba(57, 58, 58, 0.703);
+        overflow: hidden;
         cursor: default;
         form{
             width: 100%;
+            height: 70%;
             .form-dets{
+                height: 100%;
+                width: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                align-items: center;
                 gap: 30px;
-                align-items: start;
-                padding: 10px;
                 .form-header{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
                     width: 100%;
                     height: fit-content;
-                    p{
-                        font-family: 'Yekan';
-                        font-size: 20px;
-                        margin: 0;
-                    }
                     .close-btn{
                         color: #aaa;
                         display: flex;
-                        justify-content: center;
                         align-items: center;
-                        
+                        margin-top: 10px;
+                        margin-right: 10px;
+                        svg{
+                            path{
+                                fill: white;
+                            }
+                        }
                     }
                     .close-btn:hover,.close-btn:focus{
                         cursor: pointer;
@@ -249,24 +383,25 @@ body{
                     flex-direction: column;
                     align-items: right;
                     gap: 50px;
-                    width: 60%;
+                    width: 100%;
                     .form-input{
-                        p{
-                            font-size: 18px;
-                            font-family: 'Yekan';
-                        }
+                        width: 100%;
                         display: flex;
                         flex-direction: column;
                         gap: 2px;
-                        justify-content: space-between;
-                        align-items: start;
+                        align-items: center;
+                        p{
+                            font-size: 18px;
+                            font-family: 'Yekan';
+                            color: white;
+                        }
                         input{
                             transition: background-color ease 0.4s;
                             text-align: right;
-                            font-family: 'Yekan';
+                            font-family: 'Yekan', 'Quicksand';
                             border: 1px solid #d7dbe7;
                             border-radius: 4px;
-                            width: 100%;
+                            width: 60%;
                             padding: 10px;
                             outline: none;
                             font-size: 18px;
@@ -279,7 +414,7 @@ body{
                     .form-btn{
                         display: flex;
                         flex-direction: row;
-                        justify-content: right;
+                        justify-content: center;
                         align-items: center;
                         .submit-btn{
                             transition: background-color 0.4s ease, box-shadow 0.4s ease;
@@ -296,7 +431,6 @@ body{
                         }
                         .submit-btn:hover{
                             cursor: pointer;
-                            transition: background-color 0.4s ease, box-shadow 0.4s ease;
                             background-color: #a595f5;
                             box-shadow: 0px 0px 12px $navColor;
                         }
@@ -304,5 +438,26 @@ body{
                 } 
             }
         }
+        .bottom-text{
+            position: absolute;
+            left: 0;
+            top: 80%;
+            height: 40%;
+            width: 100%;
+            background-color: white;
+            border-radius: 100%;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            p{
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                font-family: 'Yekan';
+                font-size: 28px;
+                color: white;
+            }
+        }
     }
+    
 }

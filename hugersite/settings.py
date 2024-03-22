@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'huger_db',
         'USER': 'root',
-        'PASSWORD': 'Amir@dmin1234321',
+        'PASSWORD': 'amir@dmin12321',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
