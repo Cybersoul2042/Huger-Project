@@ -29,7 +29,7 @@ body {
   top: 10%;
   left: 0;
   width: 100px;
-  background: linear-gradient(to bottom right, rgb(238, 139, 40) 20%, #9784f6 70%);
+  background: linear-gradient(to bottom right, #6F54F3 20%, #9784f6 70%);
   border-radius: 12px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

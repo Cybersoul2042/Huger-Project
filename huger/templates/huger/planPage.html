@@ -23,10 +23,10 @@
                             <div class="nav-option" id="utilities">
                                 <p>امکانات دیگر</p>
                             </div>
-                            <div class="nav-option" id="contact">
-                                <p>ارتباط با اعضا</p>
+                            <div class="nav-option" id="members">
+                                <p>اعضای تیم</p>
                             </div>
-                            <div class="nav-option" id="chart">
+                            <div class="nav-option" id="charts">
                                 <p>نمودار ها</p>
                             </div>
                         </div>
@@ -39,8 +39,9 @@
             <div class="middle">
                 {% block body %}
                     
-                {% endblock %}   
+                {% endblock body %}
             </div>
         </div>
+        <script src="{% static 'huger/calendar.js' %}"></script>
     </body>
 </html>

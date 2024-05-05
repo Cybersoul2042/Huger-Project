@@ -1,0 +1,63 @@
+{% extends "huger/planPage.html" %}
+
+{% load static %}
+
+
+{% block body %}
+    <div class="charts-container" style="display: none;">
+        <div class="container-calendar">
+            <div class="grid1" id="grid">
+                <div class="time-cell"><p>شنبه</p></div>
+                <div class="time-cell"><p>یکشنبه</p></div>
+                <div class="time-cell"><p>دوشنبه</p></div>
+                <div class="time-cell"><p>سه شنبه</p></div>
+                <div class="time-cell"><p>چهارشنبه</p></div>
+                <div class="time-cell"><p>پنجشنبه</p></div>
+                <div class="time-cell"><p>جمعه</p></div>            
+            </div>
+            <div class="grid2" id="grid">
+                <div class="time-cell"><p>شنبه</p></div>
+                <div class="time-cell"><p>یکشنبه</p></div>
+                <div class="time-cell"><p>دوشنبه</p></div>
+                <div class="time-cell"><p>سه شنبه</p></div>
+                <div class="time-cell"><p>چهارشنبه</p></div>
+                <div class="time-cell"><p>پنجشنبه</p></div>
+                <div class="time-cell"><p>جمعه</p></div> 
+            </div>
+        </div>
+        <div class="submit-button">
+            <a href="{% url 'planPage' plan.url%}">
+                <button>ثبت زمان</button>
+            </a>
+        </div>
+    </div>
+    <div class="members-container" style="display: none;">
+        {% for user in plan.team.all %}
+            <div class="user-container">
+                <div class="user">
+                    <p>{{ user }}</p>
+                </div>
+            </div>
+        {% endfor %}      
+    </div>
+    <div class="utilities-container" style="display: none;">
+        <div class="utilities-cards">
+            <div class="utilities-card">
+                <img src="{% static 'huger/imgs/ai.jpg' %}" alt="AI">
+                <p>AI Co-Worker</p>
+                <h3>....به زودی</h3>
+            </div>
+            <div class="utilities-card">
+                <img src="{% static 'huger/imgs/tasks.jpeg' %}" alt="Tasks">
+                <p>Task Calendar</p>
+                <h3>....به زودی</h3>
+            </div>
+            <div class="utilities-card">
+                <img src="{% static 'huger/imgs/chat.png' %}" alt="">
+                <p>Chat-Box</p>
+                <h3>....به زودی</h3>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+    

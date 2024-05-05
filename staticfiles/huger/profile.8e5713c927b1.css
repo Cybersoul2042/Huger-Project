@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+@font-face {
+  font-family: Yekan;
+  src: url("fonts/BYekan+.080f937ceb58.ttf");
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Yekan", "Quicksand", sans-serif;
+  color: white;
+  background-color: #121212;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+.content #particles-js {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.content .copy-text {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100px;
+  background: linear-gradient(to bottom right, #6F54F3 20%, #9784f6 70%);
+  border-radius: 12px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 0.6s ease-in-out;
+}
+
+.navbar-container {
+  position: relative;
+  width: 10vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgb(41, 41, 41);
+  z-index: 99;
+}
+.navbar-container .navbar {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navbar-container .navbar .navbar-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.navbar-container .navbar .navbar-contents .navbar-options {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+.navbar-container .navbar .navbar-contents .navbar-options .nav-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+.navbar-container .navbar .navbar-contents .navbar-options .nav-option svg path {
+  fill: white;
+}
+.navbar-container .navbar .navbar-contents .navbar-options .plan-btn {
+  margin-top: 30px;
+}
+.navbar-container .navbar .navbar-contents .navbar-options .plan-btn .new-plan-btn {
+  align-content: center;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  font-size: 18px;
+  font-family: "Yekan", sans-serif;
+  background-color: #9784f6;
+  padding: 10px;
+  border: 0px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0;
+}
+.navbar-container .navbar .navbar-contents .navbar-options .plan-btn .new-plan-btn:hover {
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  background-color: #a595f5;
+  box-shadow: 0px 0px 12px #9784f6;
+}
+.navbar-container .navbar .navbar-contents .account-options {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid rgb(24, 24, 24);
+  width: 100%;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-name svg path {
+  fill: white;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-name:hover {
+  cursor: pointer;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-modal {
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-40%);
+  width: 80%;
+  height: 150px;
+  background-color: rgb(23, 23, 23);
+  border-radius: 12px;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-modal .modal-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-modal .modal-content .logout-btn {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-modal .modal-content .logout-btn a {
+  color: rgb(255, 52, 52);
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Yekan", sans-serif;
+  transition: color 0.4s ease;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-modal .modal-content .logout-btn a:hover {
+  color: rgb(255, 115, 115);
+}
+.navbar-container .navbar .navbar-contents .account-options .account-modal .modal-content .settings {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-container .navbar .navbar-contents .account-options .account-modal .modal-content .settings p {
+  font-size: 18px;
+  font-family: "Yekan", sans-serif;
+}
+
+.middle {
+  height: 100vh;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.middle .body-container {
+  color: white;
+  background: rgba(111, 111, 111, 0.216);
+  backdrop-filter: blur(7.9px);
+  --webkit-backdrop-filter: blur(7.9px);
+  border-radius: 12px;
+  width: 70%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+}
+.middle .body-container .search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.347);
+  margin-top: 2%;
+  height: 5%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.middle .body-container .search-container .search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.middle .body-container .search-container .search-bar svg {
+  transform: rotate(90deg);
+}
+.middle .body-container .search-container .search-bar svg path {
+  fill: white;
+  opacity: 30%;
+}
+.middle .body-container .search-container .search-bar .form-control {
+  background-color: transparent;
+  border: 0px;
+  color: white;
+  padding-right: 8px;
+  font-size: 18px;
+  font-family: "Yekan", sans-serif;
+  outline: none;
+}
+.middle .body-container .search-container .search-bar input:focus {
+  border: 0px;
+  outline: none;
+}
+.middle .body-container .contents {
+  height: 90%;
+}
+.middle .body-container .contents .main {
+  position: relative;
+  height: 100%;
+}
+.middle .body-container .contents .main .main-body {
+  padding: 10px;
+}
+.middle .body-container .contents .main .main-body .plan-page {
+  background-color: rgba(31, 31, 31, 0.649);
+  border-radius: 6px;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.middle .body-container .contents .main .main-body .plan-page .url {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.middle .body-container .contents .main .main-body .plan-page .url .plan-url {
+  font-family: "Quicksand", sans-serif;
+}
+.middle .body-container .contents .main .main-body .plan-page .url .plan-url:hover {
+  cursor: pointer;
+}
+.middle .body-container .contents .main .main-body .plan-page .url svg path {
+  fill: white;
+}
+.middle .body-container .contents .main .main-body .plan-page .plan-name {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Quicksand", "Yekan", sans-serif;
+}
+.middle .body-container .contents .main .pagination {
+  direction: ltr;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.middle .body-container .contents .main .pagination .pagination-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.middle .body-container .contents .main .pagination .active {
+  color: #9784f6;
+}
+.middle .body-container .contents .main .pagination li {
+  list-style-type: none;
+}
+.middle .body-container .contents .main .pagination a {
+  color: white;
+  text-decoration: none;
+  font-family: "Yekan", sans-serif;
+}
+.middle .body-container .contents .main .pagination a:hover {
+  color: #9784f6;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: hsla(0, 0%, 11%, 0.601);
+  top: 0;
+  left: 0;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  cursor: not-allowed;
+}
+.modal .modal-content {
+  position: absolute;
+  color: black;
+  width: 25%;
+  height: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 8%, transparent 8%);
+  background-position: 0% 0%;
+  background-size: 1% 1%;
+  border-radius: 8px;
+  box-shadow: 0 0px 20px 0 rgba(57, 58, 58, 0.703);
+  overflow: hidden;
+  cursor: default;
+}
+.modal .modal-content form {
+  width: 100%;
+  height: 70%;
+}
+.modal .modal-content form .form-dets {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.modal .modal-content form .form-dets .form-header {
+  width: 100%;
+  height: fit-content;
+}
+.modal .modal-content form .form-dets .form-header .close-btn {
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.modal .modal-content form .form-dets .form-header .close-btn svg path {
+  fill: white;
+}
+.modal .modal-content form .form-dets .form-header .close-btn:hover, .modal .modal-content form .form-dets .form-header .close-btn:focus {
+  cursor: pointer;
+}
+.modal .modal-content form .form-dets .form-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  gap: 50px;
+  width: 100%;
+}
+.modal .modal-content form .form-dets .form-contents .form-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+.modal .modal-content form .form-dets .form-contents .form-input p {
+  font-size: 18px;
+  font-family: "Yekan";
+  color: white;
+}
+.modal .modal-content form .form-dets .form-contents .form-input input {
+  transition: background-color ease 0.4s;
+  text-align: right;
+  font-family: "Yekan", "Quicksand";
+  border: 1px solid #d7dbe7;
+  border-radius: 4px;
+  width: 60%;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+}
+.modal .modal-content form .form-dets .form-contents .form-input input:focus {
+  transition: background-color ease 0.4s;
+  background-color: rgba(198, 198, 198, 0.219);
+}
+.modal .modal-content form .form-dets .form-contents .form-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content form .form-dets .form-contents .form-btn .submit-btn {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  justify-content: center;
+  width: 20%;
+  height: 40px;
+  font-size: 14px;
+  background-color: #9784f6;
+  border: 0px;
+  border-radius: 40px;
+  color: white;
+  text-align: center;
+  box-shadow: 0;
+}
+.modal .modal-content form .form-dets .form-contents .form-btn .submit-btn:hover {
+  cursor: pointer;
+  background-color: #a595f5;
+  box-shadow: 0px 0px 12px #9784f6;
+}
+.modal .modal-content .bottom-text {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  height: 40%;
+  width: 100%;
+  background-color: white;
+  border-radius: 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-content .bottom-text p {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: "Yekan";
+  font-size: 28px;
+  color: white;
+}
+
+/*# sourceMappingURL=profile.css.83a41f889819.map */

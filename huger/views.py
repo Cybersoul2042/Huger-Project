@@ -7,6 +7,7 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
+import json
 
 from .models import User, Plan
 
@@ -41,7 +42,9 @@ def profile(request):
 
 def plan_page(request, ppURL):
     plan = Plan.objects.get(url = ppURL)
-    return render(request, "huger/planPage.html",{
+    if request.user not in plan.team.all():
+        plan.team.add(request.user)
+    return render(request, "huger/planPageBody.html",{
         "plan": plan
     })
     
@@ -94,4 +97,10 @@ def register(request):
     
     else:
         return render(request, "huger/register.html")
+    
+def AddPlanTime(request):
+    if request.method != "POST":
+        return JsonResponse({"error" : "POST request required"}, status = 400)
+    else:
+        data = json.loads(request.body)
 

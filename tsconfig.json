@@ -4,11 +4,11 @@
       "sourceMap": true,
       "noImplicitAny": true,
       "module": "es6",
-      "target": "es6",
+      "target": "es2017",
       "jsx": "react",
       "allowJs": true,
       "moduleResolution": "node"
   },
     
-  "include": ["D:/Web_Projects/Huger/hugersite/huger"]
+  "include": ["D:/2-CyebrSoul2077/AmirSoftwares/Web_Projects/Huger/hugersite/huger"]
 }
